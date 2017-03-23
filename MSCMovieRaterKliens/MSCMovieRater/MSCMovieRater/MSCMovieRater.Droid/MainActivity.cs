@@ -9,11 +9,10 @@ using Android.OS;
 
 namespace MSCMovieRater.Droid
 {
-	[Activity (Label = "MSCMovieRater.Droid", MainLauncher = true, Icon = "@drawable/icon")]
+	[Activity (Label = "MovieRater", MainLauncher = true, Icon = "@drawable/icon")]
 	public class MainActivity : Activity
 	{
-		int count = 1;
-
+		
 		protected override void OnCreate (Bundle bundle)
 		{
 			base.OnCreate (bundle);
@@ -21,15 +20,49 @@ namespace MSCMovieRater.Droid
 			// Set our view from the "main" layout resource
 			SetContentView (Resource.Layout.Main);
 
-			// Get our button from the layout resource,
-			// and attach an event to it
-			Button button = FindViewById<Button> (Resource.Id.myButton);
-			
-			button.Click += delegate {
-				button.Text = string.Format ("{0} clicks!", count++);
-			};
-		}
-	}
+            var toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
+            SetActionBar(toolbar);
+            ActionBar.Title = "MSC Movie Rater";
+
+        }
+
+        public override bool OnCreateOptionsMenu(IMenu menu)
+        {
+            MenuInflater.Inflate(Resource.Menu.menu, menu);
+            return base.OnCreateOptionsMenu(menu);
+        }
+
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            Toast.MakeText(this, "hello", ToastLength.Long).Show();
+            switch (item.GroupId)
+            {
+                case 1:
+                    RefreshList();
+                    return true;
+                
+                case 2:
+                    SearchMovie();
+                    return true;
+                default:
+                    return OnOptionsItemSelected(item);
+            }
+
+            
+        }
+
+        private void SearchMovie()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void RefreshList()
+        {
+            throw new NotImplementedException();
+        }
+
+
+    }
 }
 
 

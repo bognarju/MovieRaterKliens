@@ -1,5 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
-	<uses-sdk android:minSdkVersion="15" />
-	<application android:label="MSCMovieRater.Droid"></application>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="10000" android:installLocation="auto" android:versionName="1.0.0" package="hu.lambdacom.android.movierater">
+	<uses-sdk android:minSdkVersion="15" android:targetSdkVersion="22" />
+	<application android:label="MSCMovieRater.Droid" android:theme="@style/MyTheme" android:icon="@drawable/Icon">
+  
+  </application>
 </manifest>

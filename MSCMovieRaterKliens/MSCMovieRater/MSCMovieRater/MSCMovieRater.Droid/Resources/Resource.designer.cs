@@ -45,7 +45,13 @@ namespace MSCMovieRater.Droid
 		{
 			
 			// aapt resource value: 0x7f020000
-			public const int Icon = 2130837504;
+			public const int ic_autorenew_black_24dp = 2130837504;
+			
+			// aapt resource value: 0x7f020001
+			public const int ic_search_black_24dp = 2130837505;
+			
+			// aapt resource value: 0x7f020002
+			public const int Icon = 2130837506;
 			
 			static Drawable()
 			{
@@ -60,8 +66,17 @@ namespace MSCMovieRater.Droid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f050000
-			public const int myButton = 2131034112;
+			// aapt resource value: 0x7f070001
+			public const int listView1 = 2131165185;
+			
+			// aapt resource value: 0x7f070002
+			public const int menu_refresh = 2131165186;
+			
+			// aapt resource value: 0x7f070003
+			public const int menu_search = 2131165187;
+			
+			// aapt resource value: 0x7f070000
+			public const int toolbar = 2131165184;
 			
 			static Id()
 			{
@@ -79,12 +94,31 @@ namespace MSCMovieRater.Droid
 			// aapt resource value: 0x7f030000
 			public const int Main = 2130903040;
 			
+			// aapt resource value: 0x7f030001
+			public const int toolbar = 2130903041;
+			
 			static Layout()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
 			}
 			
 			private Layout()
+			{
+			}
+		}
+		
+		public partial class Menu
+		{
+			
+			// aapt resource value: 0x7f060000
+			public const int menu = 2131099648;
+			
+			static Menu()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Menu()
 			{
 			}
 		}
@@ -104,6 +138,22 @@ namespace MSCMovieRater.Droid
 			}
 			
 			private String()
+			{
+			}
+		}
+		
+		public partial class Style
+		{
+			
+			// aapt resource value: 0x7f050000
+			public const int MyTheme = 2131034112;
+			
+			static Style()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Style()
 			{
 			}
 		}
