@@ -6,6 +6,9 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using System.Collections.Generic;
+using MSCMovieRaterBackend.DataObjects;
+using System.Threading.Tasks;
 
 namespace MSCMovieRater.Droid
 {
@@ -23,7 +26,6 @@ namespace MSCMovieRater.Droid
             var toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
             SetActionBar(toolbar);
             ActionBar.Title = "MSC Movie Rater";
-
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
