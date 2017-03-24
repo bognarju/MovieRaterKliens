@@ -6,6 +6,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using System.Collections.Generic;
 
 namespace MSCMovieRater.Droid
 {
@@ -16,19 +17,32 @@ namespace MSCMovieRater.Droid
 		protected override void OnCreate (Bundle bundle)
 		{
 			base.OnCreate (bundle);
+            ListView movieList;
 
-			// Set our view from the "main" layout resource
-			SetContentView (Resource.Layout.Main);
+            // lista lekérés a szervertől
+            List<MovieItem> movieItems = new List<MovieItem>();
 
+            for (int i=0; i<5; i++)
+            {
+                MovieItem item = new MovieItem();
+                item.Title = "cím " + i;
+                item.Rate = "rate " + i;
+                movieItems.Add(item);
+            }
+
+            SetContentView(Resource.Layout.Main);
+            movieList = FindViewById<ListView>(Resource.Id.list);
+            movieList.Adapter = new MSCMovieRater.Droid.ListScreenAdapter(this, movieItems);
+            
             var toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
             SetActionBar(toolbar);
             ActionBar.Title = "MSC Movie Rater";
-
+            
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
         {
-            MenuInflater.Inflate(Resource.Menu.menu, menu);
+            MenuInflater.Inflate(Resource.Menu.MovieMenu, menu);
             return base.OnCreateOptionsMenu(menu);
         }
 
